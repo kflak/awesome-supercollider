@@ -10,40 +10,48 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Learning resources](#learning-resources)
-  - [Written tutorials](#written-tutorials)
-  - [Videos](#videos)
-  - [Books](#books)
-  - [Research papers](#research-papers)
-  - [Others](#others)
-- [Quarks, plugins and extensions](#quarks-plugins-and-extensions)
-  - [Live coding](#live-coding)
-  - [Live Performance](#live-performance)
-  - [Controllers](#controllers)
-  - [Network](#network)
-  - [Physics](#physics)
-  - [Buffer management](#buffer-management)
-  - [Patterns](#patterns)
-  - [Maths](#maths)
-  - [Immersive audio](#immersive-audio)
-  - [FX](#fx)
-  - [Synthesis](#synthesis)
-  - [GUI](#gui)
-  - [Misc](#misc)
-- [Synthdefs](#synthdefs)
-- [Instruments](#instruments)
-  - [Emulations / clones](#emulations--clones)
-  - [Granular](#granular)
-  - [Other](#other)
-- [Physical/embedded computing](#physicalembedded-computing)
-- [Clients](#clients)
-  - [Language clients](#language-clients)
-  - [Livecode interfaces](#livecode-interfaces)
-- [IDE alternatives](#ide-alternatives)
-- [Community](#community)
-- [Tools](#tools)
-- [Contribute](#contribute)
-- [License](#license)
+  - [Learning resources](#learning-resources)
+    - [Written tutorials](#written-tutorials)
+    - [Videos](#videos)
+    - [Books](#books)
+    - [Research papers](#research-papers)
+    - [Others](#others)
+  - [Quarks, plugins and extensions](#quarks-plugins-and-extensions)
+    - [Metacontrol, mapping and gestures](#metacontrol-mapping-and-gestures)
+    - [Live coding](#live-coding)
+    - [Live Performance](#live-performance)
+    - [Controllers](#controllers)
+    - [Network](#network)
+    - [Physics](#physics)
+    - [Buffer management](#buffer-management)
+    - [Patterns](#patterns)
+    - [Maths](#maths)
+    - [Immersive audio](#immersive-audio)
+    - [FX](#fx)
+    - [Synthesis](#synthesis)
+    - [GUI](#gui)
+    - [Misc](#misc)
+  - [Synthdefs](#synthdefs)
+  - [Instruments](#instruments)
+    - [Emulations / clones](#emulations--clones)
+    - [Granular](#granular)
+    - [Other](#other)
+  - [Single board computers](#single-board-computers)
+    - [Norns](#norns)
+    - [Raspberry Pi](#raspberry-pi)
+    - [Others](#others-1)
+  - [Clients](#clients)
+    - [Language clients](#language-clients)
+    - [Livecode interfaces](#livecode-interfaces)
+  - [IDE alternatives](#ide-alternatives)
+  - [Community](#community)
+  - [Build scripts and templates](#build-scripts-and-templates)
+- [Development](#development)
+  - [Quarks](#quarks)
+  - [Writing plugins](#writing-plugins)
+  - [Others](#others-2)
+  - [Contribute](#contribute)
+  - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -59,9 +67,14 @@
 - [learn](https://github.com/supercollider/learn) - Official SuperCollider tutorial
 - [A-Practical-Guide](http://doc.sccode.org/Browse.html#Streams-Patterns-Events%3EA-Practical-Guide) - A fantastic pattern tutorial (which can also be found in your help files)
 - [Minibee Tutorial](http://roosnaflak.com/tech-and-research/minibee-tutorials/) - How to work with the Minibee sensors (for dance performances, etc.) in SuperCollider
+- [Mads Kjeldgaard's Tech and research](https://www.madskjeldgaard.dk/posts) - A blog containing a range of tips, tricks and tutorials
+- [Implementing a SuperCollider UGen in Rust](http://www.andrewchristophersmith.com/2015/01/01/implementing-a-supercollider-external-in-rust/)
+- [SolarPowered SuperCollider on a Raspberry Pi Zero](http://fredrikolofsson.com/f0blog/?q=node/655) - Great little guide for using SC on a solar powered Pi Zero.
 
 ### Videos
 - [SuperCollider Tutorials](https://www.youtube.com/watch?v=yRzsOOiJ_p4&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC) - Tutorials by Eli Fieldsteel covering a range of subjects
+- [Project Free Jazz](https://www.youtube.com/watch?v=AxiG5mjjqzE&list=PLBGCHACLI2b6kawXFK7LayACsIncdyf2f) - A Four part tutorial about algorithmic composition with SuperCollider
+- [Audio signal processing in SuperCollider](https://www.youtube.com/playlist?list=PL1Zlv_e8Lv9g2NLtDb0X_VhIw9aR7mcJ7) - A series of lectures by Zlatko Baracskai focusing on audio signal processing. 
 - [Live Coding Tutorials](https://www.youtube.com/playlist?list=PLlWmK4qVXO37vgyLeNe8ElF15pInARU6x) - Tutorials specifically about live coding
 - [Masterclass "The Ambisonic Toolkit"](http://www.ambisonictoolkit.net/documentation/supercollider/tutorials/) - A general introduction to ambisonics and the ATK
 - [Ultimate Arduino-To-Supercollider Tutorials- Control Signals for Digital Audio](https://www.youtube.com/playlist?list=PLAXkVXyP6y5PF2Xy0hMWiKuIdf2Zu6xnG) - How to use the Arduino micro computers with SC
@@ -69,6 +82,7 @@
 - [SuperCollider and Time](https://medias.ircam.fr/xb090dd_supercollider-and-time) - James McCartney (author of SuperCollider) giving a talk at IRCAM
 - [SoundEngraver](https://www.youtube.com/channel/UCRxJO2INa3EWX19IfoWqS5Q) - video demos showcasing a variety of things in SC
 - [Musical Sound Design In Supercollider](https://www.youtube.com/playlist?list=PLXCUkMwOEWQtB-leHHSexTizzcACdozp9) - A series of intermediate level tutorials for sound design.
+- [Musical Sound Design in Supercollider video series](https://scsynth.org/t/musical-sound-design-in-supercollider-video-series/2080) - Videos on sound design techniques in SC, including pulsar synthesis examples.
 
 ### Books
 - [Introduction to SuperCollider](https://www.logos-verlag.de/cgi-bin/engbuchmid?isbn=4017&lng=eng&id=) - Written by Andrea Valle, includes pdf. Published 2016.
@@ -78,12 +92,16 @@
 - [OXford Handbook of Algorithmic Music](https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780190226992.001.0001/oxfordhb-9780190226992) - Not strictly speaking SuperCollider, but a great resource nevertheless.
 
 ### Research papers
+- [Influx – Loose Control, Gain Influence](https://www.3dmin.org/research/open-development-and-design/influx/) - Super interesting article about Alberto de Campo's Influx system and gesture control/mapping in general
 - [NNdef: Livecoding Digital Musical Instruments in SuperCollider using Functional Reactive Programming](http://www.friendlyvirus.org/files/Miguel-Negrao-NNdef-FARM-2018.pdf)
 
 ### Others
 - [scinterviews.com](http://scinterviews.com/) - SuperCollider interviews
 
 ## Quarks, plugins and extensions
+
+### Metacontrol, mapping and gestures
+- [Influx](https://github.com/supercollider-quarks/Influx) - System for complex mapping of gestures
 
 ### Live coding
 - [SuperDirt](https://github.com/musikinformatik/SuperDirt) - The sound engine of the TidalCycles pattern language
@@ -112,6 +130,7 @@
 
 ### Buffer management
 - [PolyBuf](https://github.com/madskjeldgaard/PolyBuf) - Easily load and access a bunch of audio files into collections of buffers in SuperCollider
+- [Convenience](https://github.com/salkin-mada/Convenience) - Load entire sample banks or folder structures (folders within folders) of audio files into easily accessible collections of buffers. And more.
 
 ### Patterns
 - [Repetition.sc](https://github.com/lvm/Repetition.sc) - A set of tools to build a Stream of Events using symbols and a sort of language in the language
@@ -124,6 +143,7 @@
 - [vstplugin](https://git.iem.at/pd/vstplugin/releases) – IEM's VST Plugin integration for SuperCollider (and Pure Data)
 - [Vowel](https://github.com/supercollider-quarks/Vowel) - Convenience Class for Vowel Creation
 - [PitchShiftPA](https://github.com/dyfer/PitchShiftPA) - Phase Aligned pitch shifting
+- [DWGReverb](https://github.com/sonoro1234/DWGReverb) - A virtual room generator: It has a FDN reverb for the late response but also early reflections generator based on room dimensions 
 
 ### Synthesis
 - [CaosPercLib](https://github.com/josecaos/caosperclib) - a Collection of Percussion Classes for SuperCollider
@@ -156,15 +176,27 @@
 
 ### Other
 - [LNX Studio](http://lnxstudio.sourceforge.net/) - a Digital Audio Work Station. [Repository](https://github.com/neilcosgrove/LNX_Studio)
+- [TXmodular](http://www.palemoonrising.co.uk/) - TXmodular is a production environment fully written in SC
 
-## Physical/embedded computing
+## Single board computers
+### Norns
+- [Monome norns, SuperCollider and Lua](https://medium.com/@kidsputnik/monome-norns-supercollider-and-lua-part-1-d97646306973) - Nice tutorial on getting started with SuperCollider/LUA on the Norns platform
+
+### Raspberry Pi
+- [Solar powered SuperCollider](http://fredrikolofsson.com/f0blog/?q=node/655) - Running SC on a Solar powered Raspberry Pi Zero
+- [Notes for setting up a Raspberry Pi 4 for audio work](https://madskjeldgaard.dk/posts/raspi4-notes/) - A comprehensive guide for tuning Raspbian and using (latest version of) SuperCollider
+- [Networked audio using Raspberry Pi 4, zita-njbridge and SuperCollider](https://madskjeldgaard.dk/posts/raspi-zita-njbridge/) - Do networked audio on the Pi using SuperCollider
 - [Prynth](http://prynth.github.io/) - Prynth are programmable sound synthesizers powered by Raspberry Pi
 - [supercolliderStandaloneRPI2](https://github.com/redFrik/supercolliderStandaloneRPI2) - Standalone for Raspberry Pi 2 or 3 with Raspbian Stretch including the full IDE
 - [supercolliderStandaloneRPI1](https://github.com/redFrik/supercolliderStandaloneRPI1) - Standalone for Raspberry Pi 1 or Zero with Raspbian Stretch including the full IDE
+- [Building SuperCollider for piCore Linux](http://fredrikolofsson.com/f0blog/?q=node/672) - Great guide for installing stuff on PiCoreLinux
+
+### Others
 - [Bela](https://blog.bela.io/2017/10/29/bela-and-supercollider-live-coding-sensors/) - Bela is an embedded computing platform for creating responsive interactive applications
 - [OpenBCI-SuperCollider](https://github.com/krisztian-hofstadter-tedor/OpenBCI-SuperCollider) - SuperCollider classes for communicating with Open Brain Computer Interface
 - [IBVA-BlueVAS-SuperCollider](https://github.com/krisztian-hofstadter-tedor/IBVA-BlueVAS-SuperCollider) -
 A SuperCollider class for communicating with the IBVA EEG brain wave measurement headset
+
 
 ## Clients
 ### Language clients
@@ -174,6 +206,7 @@ A SuperCollider class for communicating with the IBVA EEG brain wave measurement
 - [ScalaCollider](https://github.com/Sciss/ScalaCollider) - Scala client
 - [supriya](https://github.com/josiah-wolf-oberholtzer/supriya) - Python client
 - [cl-collider](https://github.com/byulparan/cl-collider) - CommonLisp client
+- [sc_client](https://github.com/tonikasoft/sc_client) - Rust client
 
 ### Livecode interfaces
 - [TidalCycles](http://tidalcycles.org/) - Haskell based live coding environment for patterns
@@ -187,6 +220,7 @@ A SuperCollider class for communicating with the IBVA EEG brain wave measurement
 - [scnvim](https://github.com/davidgranstrom/scnvim) - NeoVim plugin
 - [scel](https://github.com/supercollider/scel) - Emacs interface
 - [vscode_supercollider](https://github.com/salkin-mada/vscode_supercollider) - Supercollider syntax for Visual Studio Code
+- [Hadron](https://github.com/htor/hadron-editor) - Simple editor with help browser and post window
 
 ## Community
 - [scsynth.org](http://scsynth.org/) - Official SuperCollider forum
@@ -198,11 +232,26 @@ A SuperCollider class for communicating with the IBVA EEG brain wave measurement
 - [Telegram ES](https://t.me/supercollider_es) - Telegram SuperGroup in Spanish
 - [Facebook](https://www.facebook.com/groups/supercollider/) - The SuperCollider facebook group
 
-## Tools
+## Build scripts and templates
+- [Build script for Linux](https://github.com/lvm/build-supercollider) - Easily build SuperCollider with plugins from source on Linux (Ubuntu/Debian)
+
+# Development
+
+## Quarks
 - [Cookiecutter template for SuperCollider quarks](https://github.com/madskjeldgaard/cookiecutter-quark) - A SuperCollider package (quark) generator using the Cookiecutter cli program. The fastest way to get setup for a quark
+
+## Writing plugins
+- [Example plugins](https://github.com/supercollider/example-plugins) - Simple and understandable examples of cpp plugins for SC
+- [Server Plugins API](http://doc.sccode.org/Reference/ServerPluginAPI.html) - Description of some of the boilerplate you get for writing UGens / plugins
 - [Cookiecutter template for SuperCollider plugin](https://github.com/supercollider/cookiecutter-supercollider-plugin) - cookiecutter project for SuperCollider server plugins
+- [Implementing a SuperCollider plugin in Rust](http://www.andrewchristophersmith.com/2015/01/01/implementing-a-supercollider-external-in-rust/)
+- [UGen quality standards](https://github.com/supercollider/supercollider/wiki/UGen-Quality-Standards)
+
+
+## Others
 - [superfomus](https://github.com/smoge/superfomus) - bindings to Fomus Music Notation (FOrmat MUSic)
 - [SuperColliderAU](https://github.com/supercollider/SuperColliderAU) - SuperColliderAU is an AudioUnit wrapper that allows using SuperCollider servers inside AudioUnits hosts on macOS. The embedded server may be controlled over OSC as usual
+
 ## Contribute
 
 All contributions welcome!
