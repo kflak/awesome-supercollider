@@ -1,0 +1,53 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+Attribution	code-of-conduct.md	/^## Attribution$/;"	s
+Awesome SuperCollider[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)	readme.md	/^# Awesome SuperCollider[![Awesome](https:\/\/awesome.re\/badge.svg)](https:\/\/awesome.re)$/;"	c
+Books	readme.md	/^### Books$/;"	S
+Buffer management	readme.md	/^### Buffer management$/;"	S
+Clients	readme.md	/^## Clients$/;"	s
+Community	readme.md	/^## Community$/;"	s
+Contents	readme.md	/^# Contents$/;"	c
+Contribute	readme.md	/^## Contribute$/;"	s
+Contribution Guidelines	contributing.md	/^# Contribution Guidelines$/;"	c
+Contributor Covenant Code of Conduct	code-of-conduct.md	/^# Contributor Covenant Code of Conduct$/;"	c
+Controllers	readme.md	/^### Controllers$/;"	S
+Emulations / clones	readme.md	/^### Emulations \/ clones$/;"	S
+Enforcement	code-of-conduct.md	/^## Enforcement$/;"	s
+FX	readme.md	/^### FX$/;"	S
+GUI	readme.md	/^### GUI$/;"	S
+Granular	readme.md	/^### Granular$/;"	S
+IDE alternatives	readme.md	/^## IDE alternatives$/;"	s
+Immersive audio	readme.md	/^### Immersive audio$/;"	S
+Instruments	readme.md	/^## Instruments$/;"	s
+Language clients	readme.md	/^### Language clients$/;"	S
+Learning resources	readme.md	/^## Learning resources$/;"	s
+License	readme.md	/^## License$/;"	s
+Live Performance	readme.md	/^### Live Performance$/;"	S
+Live coding	readme.md	/^### Live coding$/;"	S
+Livecode interfaces	readme.md	/^### Livecode interfaces$/;"	S
+Maths	readme.md	/^### Maths$/;"	S
+Misc	readme.md	/^### Misc$/;"	S
+Network	readme.md	/^### Network$/;"	S
+Other	readme.md	/^### Other$/;"	S
+Others	readme.md	/^### Others$/;"	S
+Our Pledge	code-of-conduct.md	/^## Our Pledge$/;"	s
+Our Responsibilities	code-of-conduct.md	/^## Our Responsibilities$/;"	s
+Our Standards	code-of-conduct.md	/^## Our Standards$/;"	s
+Patterns	readme.md	/^### Patterns$/;"	S
+Physical/embedded computing	readme.md	/^## Physical\/embedded computing$/;"	s
+Physics	readme.md	/^### Physics$/;"	S
+Quarks, plugins and extensions	readme.md	/^## Quarks, plugins and extensions$/;"	s
+Research papers	readme.md	/^### Research papers$/;"	S
+Scope	code-of-conduct.md	/^## Scope$/;"	s
+Synthdefs	readme.md	/^## Synthdefs$/;"	s
+Synthesis	readme.md	/^### Synthesis$/;"	S
+Tools	readme.md	/^## Tools$/;"	s
+Updating your PR	contributing.md	/^## Updating your PR$/;"	s
+Videos	readme.md	/^### Videos$/;"	S
+Written tutorials	readme.md	/^### Written tutorials$/;"	S

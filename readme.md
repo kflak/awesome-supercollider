@@ -68,6 +68,7 @@
 - [Unity 5 and SuperCollider(Custom Sound Engine)](https://www.youtube.com/playlist?list=PLKrJig-8xIiKIznvk_0WArP2ne036TeZV) - How to setup the Unity game engine to work with SuperCollider
 - [SuperCollider and Time](https://medias.ircam.fr/xb090dd_supercollider-and-time) - James McCartney (author of SuperCollider) giving a talk at IRCAM
 - [SoundEngraver](https://www.youtube.com/channel/UCRxJO2INa3EWX19IfoWqS5Q) - video demos showcasing a variety of things in SC
+- [Musical Sound Design In Supercollider](https://www.youtube.com/playlist?list=PLXCUkMwOEWQtB-leHHSexTizzcACdozp9) - A series of intermediate level tutorials for sound design.
 
 ### Books
 - [Introduction to SuperCollider](https://www.logos-verlag.de/cgi-bin/engbuchmid?isbn=4017&lng=eng&id=) - Written by Andrea Valle, includes pdf. Published 2016.
